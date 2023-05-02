@@ -15,10 +15,10 @@ function App() {
         </TextInput>
       </View>
 
-      <View style={{marginTop: 50}}>
+      <View style={{ marginTop: 50 }}>
         <Keyboard />
       </View>
-      
+
       <StatusBar />
     </View>
   );
