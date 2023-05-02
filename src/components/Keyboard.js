@@ -8,70 +8,70 @@ export function Keyboard() {
 
     return (
         <View>
-        <Row>
-            <TouchableOpacity title='7' style={styles.button}>
-                <Text style={styles.text}>7</Text>
-            </TouchableOpacity>
+            <Row>
+                <TouchableOpacity title='7' style={styles.button}>
+                    <Text style={styles.text}>7</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='8' style={styles.button}>
-                <Text style={styles.text}>8</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='8' style={styles.button}>
+                    <Text style={styles.text}>8</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='9' style={styles.button}>
-                <Text style={styles.text}>9</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='9' style={styles.button}>
+                    <Text style={styles.text}>9</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='x' style={styles.button}>
-                <Text style={styles.text}>x</Text>
-            </TouchableOpacity>
-        </Row>
+                <TouchableOpacity title='x' style={styles.button}>
+                    <Text style={styles.text}>x</Text>
+                </TouchableOpacity>
+            </Row>
 
-        <Row>
-            <TouchableOpacity title='4' style={styles.button}>
-                <Text style={styles.text}>4</Text>
-            </TouchableOpacity>
+            <Row>
+                <TouchableOpacity title='4' style={styles.button}>
+                    <Text style={styles.text}>4</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='5' style={styles.button}>
-                <Text style={styles.text}>5</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='5' style={styles.button}>
+                    <Text style={styles.text}>5</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='6' style={styles.button}>
-                <Text style={styles.text}>6</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='6' style={styles.button}>
+                    <Text style={styles.text}>6</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='-' style={styles.button}>
-                <Text style={styles.text}>-</Text>
-            </TouchableOpacity>
-        </Row>
+                <TouchableOpacity title='-' style={styles.button}>
+                    <Text style={styles.text}>-</Text>
+                </TouchableOpacity>
+            </Row>
 
-        <Row>
-            <TouchableOpacity title='1' style={styles.button}>
-                <Text style={styles.text}>1</Text>
-            </TouchableOpacity>
+            <Row>
+                <TouchableOpacity title='1' style={styles.button}>
+                    <Text style={styles.text}>1</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='2' style={styles.button}>
-                <Text style={styles.text}>2</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='2' style={styles.button}>
+                    <Text style={styles.text}>2</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='3' style={styles.button}>
-                <Text style={styles.text}>3</Text>
-            </TouchableOpacity>
+                <TouchableOpacity title='3' style={styles.button}>
+                    <Text style={styles.text}>3</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity title='+' style={styles.button}>
-                <Text style={styles.text}>+</Text>
-            </TouchableOpacity>
-        </Row>
+                <TouchableOpacity title='+' style={styles.button}>
+                    <Text style={styles.text}>+</Text>
+                </TouchableOpacity>
+            </Row>
 
-        
-        <Row>
-            <TouchableOpacity title='0' style={styles.buttonZero}>
-                <Text style={styles.text}>0</Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity title='-' style={styles.button}>
-                <Text style={styles.text}>-</Text>
-            </TouchableOpacity>
-        </Row>
+            <Row>
+                <TouchableOpacity title='0' style={styles.buttonZero}>
+                    <Text style={styles.text}>0</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity title='-' style={styles.button}>
+                    <Text style={styles.text}>-</Text>
+                </TouchableOpacity>
+            </Row>
         </View>
     )
 }
