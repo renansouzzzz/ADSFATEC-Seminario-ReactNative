@@ -1,26 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, TextInput, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, TextInput, View } from 'react-native';
 import { Keyboard } from './components/Keyboard';
 
 const number = 0;
 
+
 function App() {
   return (
+    <SafeAreaView>
+      <View style={styles.container}>
 
-    <View style={styles.container}>
+        <View style={stylesText.containerView}>
+          <TextInput style={stylesText.textInput} maxLength={12} keyboardType='numeric'>
+            {number}
+          </TextInput>
+        </View>
 
-      <View style={stylesText.containerView}>
-        <TextInput style={stylesText.textInput} maxLength={12} keyboardType='numeric'>
-          {number}
-        </TextInput>
+        <View style={{ marginTop: 50 }}>
+          <Keyboard />
+        </View>
+
+        <StatusBar />
       </View>
-
-      <View style={{ marginTop: 50 }}>
-        <Keyboard />
-      </View>
-
-      <StatusBar />
-    </View>
+    </SafeAreaView>
   );
 }
 
