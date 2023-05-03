@@ -1,25 +1,31 @@
+
 import { StatusBar } from 'expo-status-bar';
-import { Button, SafeAreaView, StyleSheet, TextInput, View } from 'react-native';
+import { SafeAreaView, StyleSheet, TextInput, View, Text } from 'react-native';
 import { Keyboard } from './components/Keyboard';
+import { createContext, useState } from 'react';
 
-const number = 0;
-
+export const contextGeneral = createContext()
 
 function App() {
+
+  const [firstValue, setFirst] = useState([0]);
+  const [secondValue, setSecond] = useState([0]); 
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
 
-        <View style={stylesText.containerView}>
-          <TextInput style={stylesText.textInput} maxLength={12} keyboardType='numeric'>
-            {number}
-          </TextInput>
-        </View>
+        <contextGeneral.Provider value={{firstValue, setFirst}}>
+          <View style={stylesText.containerView}>
+            <TextInput style={stylesText.textInput} maxLength={12} showSoftInputOnFocus={false}>
+              <Text>{firstValue ?? 0}</Text>
+            </TextInput>
+          </View>
 
-        <View style={{ marginTop: 50 }}>
-          <Keyboard />
-        </View>
-
+          <View >
+            <Keyboard />
+          </View>
+        </contextGeneral.Provider>
         <StatusBar />
       </View>
     </SafeAreaView>
