@@ -1,21 +1,19 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, TextInput, View, Text } from 'react-native';
-import { Keyboard } from './components/Keyboard';
 import { createContext, useState } from 'react';
+import Keyboard from './components/Keyboard';
 
-export const contextGeneral = createContext()
+export const contextGeneral = createContext(null)
 
-function App() {
+export default function App() {
 
   const [firstValue, setFirst] = useState([0]);
-  const [secondValue, setSecond] = useState([0]); 
 
   return (
     <SafeAreaView>
       <View style={styles.container}>
-
-        <contextGeneral.Provider value={{firstValue, setFirst}}>
+        <contextGeneral.Provider value={{ firstValue, setFirst }}>
           <View style={stylesText.containerView}>
             <TextInput style={stylesText.textInput} maxLength={12} showSoftInputOnFocus={false}>
               <Text>{firstValue ?? 0}</Text>
@@ -25,6 +23,7 @@ function App() {
           <View >
             <Keyboard />
           </View>
+
         </contextGeneral.Provider>
         <StatusBar />
       </View>
@@ -32,11 +31,8 @@ function App() {
   );
 }
 
-export default App;
-
 const styles = StyleSheet.create({
   container: {
-
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -46,7 +42,6 @@ const styles = StyleSheet.create({
 })
 
 const stylesText = StyleSheet.create({
-
   containerView: {
     height: 200,
     alignSelf: 'flex-end',
