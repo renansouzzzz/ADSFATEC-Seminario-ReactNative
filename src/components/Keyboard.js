@@ -11,7 +11,27 @@ export default function Keyboard() {
 
     const { firstValue, setFirst } = useContext(contextGeneral)
 
+    const patter = (operator) => {
+
+        let first = [...firstValue]
+        let joinValue = first.join('')
+        parseInt(joinValue)
+
+        if (!saveValue) {
+            setSave([joinValue])
+        }
+
+        if (!saveValue[1]) {
+        }
+
+        setSave([...saveValue, joinValue])
+
+        setFirst([0])
+        setOperator(operator)
+    }
+
     const onClick = (number) => {
+
         parseInt(number)
         if (firstValue[0] === 0) {
             firstValue.pop(0)
@@ -33,51 +53,50 @@ export default function Keyboard() {
     }
 
     const equals = () => {
-        let operacao = operator;
-        let valor1 = parseInt(saveValue[0])
-        let valor2 = parseInt(saveValue[2])
-        let conta = 0
+        let oper = operator;
+        let first = [...firstValue]
+        let joinValue = first.join('')
+        let value1 = parseInt(saveValue[0])
+        let value2 = parseInt(joinValue)
+        let count = 0
 
-        console.log(valor1, valor2)
+        switch (oper) {
+            case 'mult':
+                count = value1 * value2;
+                break;
 
-        switch (operacao) {
-            case 'vezes':
-                conta = valor1 * valor2;
+            case 'div':
+                count = (value1 / value2).toFixed(1);
                 break;
-            case 'dividir':
-                conta = valor1 / valor2;
+
+            case 'sum':
+                count = value1 + value2;
                 break;
-            case 'soma':
-                conta = valor1 + valor2;
-                break;
-            case 'subtrair':
-                conta = valor1 - valor2;
+
+            case 'subtract':
+                count = value1 - value2;
                 break
         }
 
-        setFirst(conta)
+        setFirst(count)
         setOperator('')
     }
 
     const calcX = () => {
-        let first = [...firstValue]
-        let joinValue = first.join('')
-        parseInt(joinValue)
-
-        if (!saveValue) {
-            setSave([joinValue])
-        }
-
-        setSave([...saveValue, joinValue])
-
-        setFirst([0])
-        setOperator('vezes')
-        console.log(firstValue, saveValue, operator)
-        console.log(saveValue[0])
-        console.log(saveValue[2])
-        console.log(saveValue[0] * saveValue[2])
+        patter('mult')
     }
 
+    const calcNeg = () => {
+        patter('subtract')
+    }
+
+    const calcSum = () => {
+        patter('sum')
+    }
+
+    const calcDiv = () => {
+        patter('div')
+    }
 
     return (
         <View>
@@ -121,7 +140,7 @@ export default function Keyboard() {
                     <Text style={styles.text}>6</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button_operadores} onPress={() => { }}>
+                <TouchableOpacity style={styles.button_operadores} onPress={() => { calcNeg() }}>
                     <Text style={styles.textSinais}>-</Text>
                 </TouchableOpacity>
             </Row>
@@ -139,7 +158,7 @@ export default function Keyboard() {
                     <Text style={styles.text}>3</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button_operadores} onPress={() => { }}>
+                <TouchableOpacity style={styles.button_operadores} onPress={() => { calcSum() }}>
                     <Text style={styles.textSinais}>+</Text>
                 </TouchableOpacity>
             </Row>
@@ -154,7 +173,7 @@ export default function Keyboard() {
                     <Text style={styles.textSinais}>=</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button_operadores} onPress={() => { }}>
+                <TouchableOpacity style={styles.button_operadores} onPress={() => { calcDiv() }}>
                     <Text style={styles.textSinais}>÷</Text>
                 </TouchableOpacity>
             </Row>
